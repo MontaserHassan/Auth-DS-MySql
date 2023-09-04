@@ -4,6 +4,7 @@ import bcrypt from 'bcrypt';
 
 @Entity()
 export default class Citizens {
+
     @PrimaryGeneratedColumn()
     id: number;
 
@@ -22,8 +23,8 @@ export default class Citizens {
     @Column({ nullable: false })
     nationality: string;
 
-    @Column({ nullable: false, unique: true })
-    passport_or_national_id: number | string;
+    @Column({ type: 'varchar', nullable: false, unique: true })
+    passport_or_national_id: string;
 
     @Column({ nullable: false, unique: true })
     email: string;
