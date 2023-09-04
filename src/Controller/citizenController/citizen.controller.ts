@@ -1,9 +1,10 @@
 import { Request, Response, NextFunction } from 'express';
 
 import { AppDataSource } from '../../Config/typeOrm.config';
-import Citizen from '../../Models/citizen.model';
+import Citizens from '../../Models/citizen.model';
 
-const citizenRepo = AppDataSource.getRepository(Citizen);
+
+const citizenRepo = AppDataSource.getRepository(Citizens);
 
 const registerUser = async (req: Request, res: Response, next: NextFunction) => {
     const x = citizenRepo.find();

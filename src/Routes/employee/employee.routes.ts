@@ -7,7 +7,7 @@ const router = express.Router();
 
 
 // middleware for citizen ...
-router.use('/login', employeeController.loginEmployee);
+router.post('/login', employeeController.loginEmployee);
 
 
 

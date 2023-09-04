@@ -7,8 +7,8 @@ const router = express.Router();
 
 
 // middleware for citizen ...
-router.use('/register', citizenController.registerUser);
-router.use('/login', citizenController.loginUser);
+router.post('/register', citizenController.registerUser);
+router.post('/login', citizenController.loginUser);
 
 
 

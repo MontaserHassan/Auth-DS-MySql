@@ -1,14 +1,16 @@
-import express from 'express';
+import express, { Request, Response, NextFunction } from 'express';
 
-import userRoutes from './user/user.routes';
+import citizenRoutes from './citizen/citizen.routes';
 import employeeRoutes from './employee/employee.routes';
+import errorHandler from '../Middleware/errorHandler.middleware';
 
 
 const router = express.Router();
 
 
-router.use('/user', userRoutes);
+router.use('/citizen', citizenRoutes);
 router.use('/employee', employeeRoutes);
+router.use((err: Error, req: Request, res: Response, next: NextFunction) => errorHandler(err, req, res, next));
 
 
 

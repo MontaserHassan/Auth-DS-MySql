@@ -4,6 +4,7 @@ import bcrypt from 'bcrypt';
 
 @Entity()
 export default class Citizens {
+
     @PrimaryGeneratedColumn()
     id: number;
 
