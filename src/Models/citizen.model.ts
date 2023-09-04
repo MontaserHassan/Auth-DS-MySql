@@ -4,7 +4,6 @@ import bcrypt from 'bcrypt';
 
 @Entity()
 export default class Citizens {
-
     @PrimaryGeneratedColumn()
     id: number;
 
@@ -23,14 +22,14 @@ export default class Citizens {
     @Column({ nullable: false })
     nationality: string;
 
-    @Column({ nullable: false })
-    passport_or_id: number;
+    @Column({ nullable: false, unique: true })
+    passport_or_national_id: number | string;
 
-    @Column({ nullable: false })
+    @Column({ nullable: false, unique: true })
     email: string;
 
-    @Column({ nullable: false })
-    phone_number: number;
+    @Column({ nullable: false, unique: true })
+    phone_number: string;
 
     @Column({ nullable: false })
     address: string;
@@ -38,10 +37,11 @@ export default class Citizens {
     @Column({ nullable: false })
     job_title: string;
 
-    @Column({ nullable: false, type: "enum", enum: ["male", "female"], default: "male" })
+    @Column({ nullable: false, type: "enum", enum: ["male", "female"], default: "male", })
     gender: string;
 
     @Column({ nullable: false })
+
     password: string;
 
     @CreateDateColumn()
@@ -54,4 +54,4 @@ export default class Citizens {
         return await bcrypt.compare(password, this.password);
     }
 
-}
+};

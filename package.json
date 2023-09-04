@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon",
-    "build": "tsc -w"
+    "build": "tsc -w",
+    "killer": "fuser -k 3000/tcp"
   },
   "author": "Montaser Hassan",
   "license": "ISC",
