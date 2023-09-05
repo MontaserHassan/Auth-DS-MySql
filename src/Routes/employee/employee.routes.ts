@@ -1,12 +1,12 @@
 import express from 'express';
 
 import employeeController from '../../Controller/employeeController/employee.controller';
+import { getCurrentEmployee } from '../../Middleware/Auth/employee/getCurrentEmployee.middleware';
 
 
 const router = express.Router();
 
 
-// middleware for citizen ...
 router.post('/login', employeeController.loginEmployee);
 
 
