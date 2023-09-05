@@ -1,14 +1,17 @@
 import express from 'express';
 
-import { citizenController } from '../../Controller/index.controller';
+import authRoutes from './auth.routes';
+import citizenProfile from './citizenProfile.routes';
+// import { getCurrentCitizen } from '../../Middleware/Auth/citizen/getCurrentCitizen.middleware';
 
 
 const router = express.Router();
 
 
-// middleware for citizen ...
-router.post('/register', citizenController.registerUser);
-router.post('/login', citizenController.loginUser);
+router.use('/auth', authRoutes);
+
+// router.use(getCurrentCitizen);
+router.use('/profile', citizenProfile);
 
 
 

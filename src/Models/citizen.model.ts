@@ -42,8 +42,10 @@ export default class Citizens {
     gender: string;
 
     @Column({ nullable: false })
-
     password: string;
+
+    @Column({ nullable: false })
+    role: string
 
     @CreateDateColumn()
     createdAt: Date;

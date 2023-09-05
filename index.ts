@@ -17,10 +17,7 @@ connectSQL(app);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({
-    credentials: true,
-    // origin: [process.env.CLIENT_URL as string, process.env.CLIENT_URL_2 as string]
-}));
+app.use(cors());
 
 app.use(router);
 

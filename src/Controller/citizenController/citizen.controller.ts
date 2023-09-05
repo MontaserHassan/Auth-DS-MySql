@@ -39,6 +39,7 @@ const registerUser = async (req: Request, res: Response, next: NextFunction) => 
         newCitizen.address = address;
         newCitizen.job_title = job_title;
         newCitizen.gender = gender;
+        newCitizen.role = "citizen";
         const savedCitizen = await citizenRepo.save(newCitizen);
         
         if(!savedCitizen)
@@ -52,16 +53,20 @@ const registerUser = async (req: Request, res: Response, next: NextFunction) => 
     } catch (error) {
         next(error)
     }
-
 };
 
 const loginUser = async (req: Request, res: Response, next: NextFunction) => {
-    console.log("login")
+    console.log("login");
 };
 
+
+const getMyProfile = async (req: Request, res: Response, next: NextFunction) => {
+    console.log('profile');
+};
 
 
 export default {
     registerUser,
-    loginUser
+    loginUser,
+    getMyProfile,
 };
