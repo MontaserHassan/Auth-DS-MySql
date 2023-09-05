@@ -6,8 +6,8 @@ import { citizenController } from '../../Controller/index.controller';
 const router = express.Router();
 
 
-router.post('/register', citizenController.registerUser);
-router.post('/login', citizenController.loginUser);
+router.post('/register', citizenController.registerCitizen);
+router.post('/login', citizenController.loginCitizen);
 
 
 

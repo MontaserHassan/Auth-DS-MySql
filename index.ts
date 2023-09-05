@@ -1,6 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import cookieParser from 'cookie-parser';
+
 dotenv.config();
 
 import { connectSQL } from './src/Database/MySql.Database';
@@ -18,12 +20,6 @@ connectSQL(app);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+app.use(cookieParser());
 
 app.use(router);
-
-app.use('*', (req,res,next)=>{
-    res.status(404).json({
-        message: `This url not found ${req.baseUrl}`
-    })
-})
-
